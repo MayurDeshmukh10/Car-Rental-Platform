@@ -7,7 +7,7 @@ Required Python Libraries -
 3.Flask-Weasy - sudo pip3 install Flask-WeasyPrint
 4.flask_mail - sudo pip3 install Flask-Mail
 5.Crypto.Cipher - sudo pip3 install pycrypto
-6.passlib - sudo pip3 install passlib
+6.passlib - sudo pip3 install passlib.
 
 How to Run - 
 1.First import database schema from car_rental_db.sql to your database.
