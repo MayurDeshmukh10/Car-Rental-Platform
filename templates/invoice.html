@@ -1,0 +1,104 @@
+
+<!DOCTYPE HTML>
+<html lang="zxx">
+   <head>
+      <title>Invoice page</title>
+      <!-- Meta tag Keywords -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta charset="UTF-8" />
+      <meta name="keywords" content="Rating Website Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements"
+         />
+      <script>
+         addEventListener("load", function () {
+         	setTimeout(hideURLbar, 0);
+         }, false);
+         
+         function hideURLbar() {
+         	window.scrollTo(0, 1);
+         }
+      </script>
+      <!-- Meta tag Keywords -->
+      <!-- css files -->
+      <link rel="stylesheet" href="{{url_for('static',filename='css/invoice.css')}}" type="text/css" media="all" />
+      <!-- Style-CSS -->
+      <!-- Font-Awesome-Icons-CSS -->
+      <!-- //css files -->
+      <!-- web-fonts -->
+      <link href="css/fonts.css" rel="stylesheet">
+      <!-- //web-fonts -->
+   </head>
+   <body>
+<script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script><script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+
+<body>
+      <!-- title -->
+      <h1 class="header-w3ls">Your Invoice</h1>
+	  <!---728x90--->
+
+      <!-- //title -->
+      <!-- content -->
+      <div class="porduct-order-agile">
+	  <!---728x90--->
+	
+         <form action="#" method="post">
+            <div class="main">
+               <div class="form-group-w3l">
+               
+             
+               </div>
+               <div class="form-group-w3l">
+                  <br><br>
+               </div>
+            </div>
+            <div class="main">
+               <div class="form-group-w3l">
+              
+               </div>
+               <div class="form-group-w3l">
+                  <br>
+               </div>
+            </div>
+            <div class="sub-hedder">
+            
+     	       <h2> Booking Id    : {{data}}</h2>
+     	       <br>
+     	       <h2>Name :    {{name}}</h2>
+     	       <br>
+               <h2> Cab Type : {{cab}}</h2>
+               <br>
+               <h2>Cab : {{cab_model}} </h2>
+               <br>
+               <h2>Start date : {{sd}}</h2>
+               <br>
+               <h2>End date : {{ed}}</h2>
+               <br>
+               <h2>Pickup time : {{p_time}}</h2>
+               <br>
+               <h2>Pickup location : {{p_loc}}</h2>
+               <br>
+               <h2>Drop off location : {{d_loc}}</h2>
+               <br>
+               <h2>Driver Name : {{dName}}</h2>
+               <br>
+               <h2>Driver Phone No : {{dphone1}}</h2>
+               <br>
+               <h2>Payment Type : {{p_type}}</h2>
+               <br>
+               <h2>Total Amount : {{amount}} Rupees</h2>
+               <br>
+             	<center><h2><nav><a href="{{ url_for('pdf_download') }}">Download Invoice as PDF</a></nav></h2></center>
+            </div>
+           
+ 
+         </form>
+      </div>
+      <!-- copyright -->
+      <div class="copy">
+        
+         </p>
+		 <!---728x90--->
+
+      </div>
+      <!-- //copyright -->
+   </body>
+</html>

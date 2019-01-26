@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Feedback</title>
+<!-- custom-theme -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Elegant Feedback Form  Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //custom-theme -->
+<link href="{{url_for('static',filename='css/bootstrap.min.css')}}" rel="stylesheet">
+<link href="{{ url_for('static',filename='css/feedback.css')}}" rel="stylesheet" type="text/css" media="all" />
+<link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+</head>
+<body class="agileits_w3layouts">
+    <h1 class="agile_head text-center">Feedback Form</h1>
+    <div class="w3layouts_main wrap">
+    <div class="container" style="min-height:100% width:80%">
+		{% with messages = get_flashed_messages() %}
+		  {% if messages %}
+		    {% for message in messages %}
+			  <div class="alert alert-warning alert-dismissible" role="alert">
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+				{{message}}
+			  </div>
+			{% endfor %}
+		  {% endif %}
+		{% endwith %}
+		
+		{% block body %}{% endblock %}
+	</div>
+	  <h3>Please help us to serve you better by taking a couple of minutes. </h3>
+	    <form action="{{url_for('feedbackform')}}" method="post" class="agile_form">
+		  <h2>How satisfied were you with our Product/Service?</h2>
+			 <ul class="agile_info_select">
+				 <li><input type="radio" value="0"name="view" id="excellent"> 
+				 	  <label for="excellent">excellent</label>
+				      <div class="check w3"></div>
+				 </li>
+				 <li><input type="radio" value="1" name="view" id="good" checked="checked"> 
+					  <label for="good"> good</label>
+				      <div class="check w3ls"></div>
+				 </li>
+				 <li><input type="radio" value="2"name="view" id="neutral"> 
+					 <label for="neutral">neutral</label>
+				     <div class="check wthree"></div>
+				 </li>
+				 <li><input type="radio" value="3" name="view" id="poor"> 
+					  <label for="poor">poor</label>
+				      <div class="check w3_agileits"></div>
+				 </li>
+			 </ul>	  
+			<h2>If you have specific feedback, please write to us...</h2>
+			
+		<!--<textarea placeholder="Additional comments" class="w3l_summary"  required=""></textarea>-->
+			<input type="text" class="w3l_summary" placeholder="comment" name="comments",required=""/>
+			<!--<textarea placeholder="Additional comments" class="w3l_summary"  required=""></textarea>-->
+			<br>
+			<br>
+			<input type="text" placeholder="Your UserId" name="userid" required="" />
+			<input type="email" placeholder="Your Email" name="email" required=""/>
+			<input type="submit" value="send" class="agileinfo" />
+	  </form>
+	</div>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+</body>
+</html>
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Delete Driver</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Flat Sign Up Form Responsive Widget Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<link href="{{url_for('static',filename='bootstrap.min.css')}}" type="text/css" rel="stylesheet">
+	<link href="{{url_for('static',filename='css/reset.css')}}" rel="stylesheet" type="text/css" media="all"/>
+	<link href="{{url_for('static',filename='reset.css')}}" type="text/css" rel="stylesheet">
+	<link href='//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+ </head>
+<body>
+<div class="container" style="min-height:100% width:80%">
+		{% with messages = get_flashed_messages() %}
+		  {% if messages %}
+		    {% for message in messages %}
+			  <div class="alert alert-warning alert-dismissible" role="alert">
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+				{{message}}
+			  </div>
+			{% endfor %}
+		  {% endif %}
+		{% endwith %}
+		
+		{% block body %}{% endblock %}
+	</div>
+<div class="container-fluid"  >
+
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="{{url_for('homepage')}}">Manage Driver </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+        <a class="nav-link" href="{{url_for('adminpage')}}">Home</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="{{url_for('adddriver')}}">Add New Driver</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="{{url_for('displaydriver')}}">Display Cars  </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{url_for('deletedriver')}}">Remove Cars <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+  <br>
+  <br>
+
+
+<div class="elelment">
+
+	<!--<h2>Reset Password Form</h2>-->
+	<div class="element-main">
+		<h1>Remove a Driver?</h1>
+		<p> Please Fill Following Details to Remove Driver</p>
+		<form action="{{url_for('deletedriver')}}" method="post">
+			<input type="text" name = "driverid" placeholder="Enter DriverID of Driver to Remove" required="">
+			<input type="submit" value="Remove Car">
+		</form>
+	</div>
+</div>
+
+<!--Tvable-->
+ 	<script src="{{url_for('static',filename='bootstrap.min.js')}}"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Booking Details</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Flat Sign Up Form Responsive Widget Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<link href="{{url_for('static',filename='bootstrap.min.css')}}" type="text/css" rel="stylesheet">
+	<!--<link href="{{url_for('static',filename='css/reset.css')}}" type="text/css" rel="stylesheet">-->
+ </head>
+<body>
+<div class="container-fluid ">
+
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Car Rental Services </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+        <a class="nav-link" href="{{url_for('adminpage')}}">Home</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+  <br>
+  <br>
+ 
+   <center><h2>All Cab Booking Details</h2></center>
+  <table align="center" class="table table-striped w-auto text-nowrap table-bordered table-hover ">
+
+    <!--Table head-->
+    <thead class="thead-dark">>
+        <tr>
+            <th>Booking ID</th>
+            <th>UserID</th>
+            <th>Cab Type</th>
+            <th>Hire Date</th>
+            <th>Return Date</th>
+            <th>Pickup Time</th>
+            <th>Pickup Location</th>
+            <th>Pickoff Location</th>
+            <th>Price/KM</th>
+            <th>Driver's DriverId</th>
+            <th>Car's CarID</th>
+        </tr>
+    </thead>
+    <!--Table head-->
+
+    <!--Table body-->
+    <tbody>
+    	{% for row in data %}
+		<tr class="table-info">
+		{% for d in row %}
+			<td>{{d}}</td>
+		{% endfor %}
+		</tr>
+	{% endfor %}
+        </tr>
+       
+    </tbody>
+    <!--Table body-->
+
+
+</table>
+
+</div>
+<!--Table-->
+ 	<script src="{{url_for('static',filename='bootstrap.min.js')}}"></script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Admin Page</title>
+<link href="{{url_for('static',filename='css/bootstrap.min.css')}}" rel="stylesheet">
+<link href="{{url_for('static',filename='css/adminpage.css')}}" rel='stylesheet' type='text/css' />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Css3 link hover effects,hover effects, css3 hover effects, ancher link hover effects,Elements"./>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+</script>
+<!-- webfonts -->
+	<link href='http://fonts.googleapis.com/css?family=Lora|Cinzel+Decorative:400,700,900' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,300,600' rel='stylesheet' type='text/css'>
+<!-- webfonts-->
+</head>
+<body>
+<div class="container" style="min-height:100% width:100%">
+		{% with messages = get_flashed_messages() %}
+		  {% if messages %}
+		    {% for message in messages %}
+			  <div class="alert alert-warning alert-dismissible" role="alert">
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+				{{message}}
+			  </div>
+			{% endfor %}
+		  {% endif %}
+		{% endwith %}
+		
+		{% block body %}{% endblock %}
+	</div>
+	<div class="hover-buttons">
+		<div class="wrap">
+	
+			<div class="tr-effects">
+				<h2>ADMINISTRATION PANEL</h2>
+				<ul class="border-list">
+					<li>	
+						<a href="{{url_for('statusdriver')}}" class="hvr-ripple-out button2">Admin Dashboard</a>
+						<a href="{{url_for('addadmindriver')}}" class="hvr-ripple-out button2">Manage Admins</a>
+						<a href="{{url_for('displaycustomer')}}" class="hvr-ripple-out button2">Manage Customers</a>
+						<a href="{{url_for('adddriver')}}" class="hvr-ripple-out button2">Manage Drivers</a>
+						<br>
+						<br>
+						<center><a href="{{url_for('carstatusdriver')}}" class="hvr-ripple-out button2">Manage Availability of Cars and Drivers</a></center>
+					
+						
+					</li>
+					<li>
+						<a href="{{url_for('addcardriver')}}" class="hvr-ripple-out button2">Manage Car Details</a>
+						<a href="{{url_for('feedbackdisplay')}}" class="hvr-ripple-out button2">Manage Feedback</a>
+						<a href="{{url_for('logindetails')}}" class="hvr-ripple-out button2">Login History</a>
+						<a href="{{url_for('displaybooking')}}" class="hvr-ripple-out button2">Manage Bookings</a>
+						<!--<a href="#" class="hvr-underline-from-left button2">Underline From Left</a>-->
+					</li>
+					<br>
+					<br>
+					<li>
+						<a href="{{url_for('homepage')}}" class="hvr-border-fade button2">Logout</a>
+					<li>
+					<!--</li>
+					<li>
+						<a href="#" class="hvr-underline-from-right button2">Underline From Right</a>
+						<a href="#" class="hvr-reveal button2">Reveal</a>
+						<a href="#" class="hvr-underline-reveal button2">Underline Reveal</a>
+							<a href="#" class="hvr-overline-reveal button2">Overline Reveal</a>
+					</li>
+					<li>
+						<a href="#" class="hvr-overline-from-left button2">Overline From Left</a>
+						<a href="#" class="hvr-overline-from-center button2">Overline From Center</a>
+						<a href="#" class="hvr-overline-from-right button2">Overline From Right</a>
+					</li>-->
+				</ul>
+			</div>
+		</div>
+	</div>
+		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>				
+	</body>
+</html>

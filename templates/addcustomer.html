@@ -1,0 +1,69 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Add New Customer</title>
+<!--<link href="{{url_for('static',filename='css/style.css')}}" rel="stylesheet" type="text/css" media="all"/>-->
+<link href="{{url_for('static',filename='css/bootstrap.min.css')}}" rel="stylesheet">
+<link href="{{url_for('static',filename='css/reset.css')}}" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="keywords" content="Reset Password Form Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<!--google fonts-->
+<link href='//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<!--element start here-->
+<div class="container" style="min-height:100% width:80%">
+		{% with messages = get_flashed_messages() %}
+		  {% if messages %}
+		    {% for message in messages %}
+			  <div class="alert alert-warning alert-dismissible" role="alert">
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+				{{message}}
+			  </div>
+			{% endfor %}
+		  {% endif %}
+		{% endwith %}
+		
+		{% block body %}{% endblock %}
+	</div>
+<div class="elelment">
+
+	<!--<h2>Reset Password Form</h2>-->
+	<div class="element-main">
+		<h1>New Customer</h1>
+		<p> Please Fill Following Details to Registration</p>
+		<form action="{{url_for('adduser')}}" method="post">
+			
+			<input type="text" name = "FName" placeholder="Enter First Name" required="">
+			<input type="text" name = "lName" placeholder="Enter Last Name" required="">
+			<input type="text" name = "username" placeholder="Enter UserID" required="">
+			<input type="text" name = "email" placeholder="Enter EmailID" required="">
+			<input type="text" name = "PhoneNumber" placeholder="Enter Phone Number" required="">
+			<input type="text" name = "age" placeholder="Enter Your Age" required="">
+			<input type="password" name = "Password" placeholder="Enter Password" required="">
+			<input type="password" name = "ConfirmPassword" placeholder="Confirm Password" required="">
+			<select type="text" id="squestion" name="squestion">
+    					<option value="0" selected>Select Security Question</option>
+					<option value="1">Your Mother's Maiden Name</option>
+					<option value="2">Your First School Name</option>
+					<option value="3">Your First Phone's Brand Name</option>
+					<option value="4">Your Childhood Best Friend's Name</option>
+				</select>
+				
+				<br>
+			<input type="text" name = "answer" placeholder="Enter Security Answer" required="">
+			<input type="submit" value="Register">
+		</form>
+	</div>
+</div>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+
+
+<!--element end here-->
+</body>
+</html>

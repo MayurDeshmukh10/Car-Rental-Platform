@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Book a Cab Now</title>
+<!-- Meta tag Keywords -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Flat Sign Up Form Responsive Widget Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Meta tag Keywords -->
+<!-- css files -->
+<link href="{{url_for('static',filename='css/bootstrap.min.css')}}" rel="stylesheet">
+<link href="{{url_for('static',filename='css/booking.css')}}" rel="stylesheet" media="all">
+<link href="{{url_for('static',filename='css/bookingfont-awesome.min.css')}}" rel="stylesheet"media="all">
+<!-- //css files -->
+<!-- online-fonts -->
+<!--<link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'><link href='//fonts.googleapis.com/css?family=Raleway+Dots' rel='stylesheet' type='text/css'>-->
+</head>
+<body>
+<!--header-->
+<div class="container" style="min-height:100% width:80%">
+		{% with messages = get_flashed_messages() %}
+		  {% if messages %}
+		    {% for message in messages %}
+			  <div class="alert alert-warning alert-dismissible" role="alert">
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+				{{message}}
+			  </div>
+			{% endfor %}
+		  {% endif %}
+		{% endwith %}
+		
+		{% block body %}{% endblock %}
+	</div>
+	<div class="header-w3l">
+		<h1>CAR RENTAL SERVICES</h1>
+	</div>
+<!--//header-->
+<!--main-->
+<div class="main-agileits">
+	<h2 class="sub-head">Book A CAR Now!</h2>
+		<div class="sub-main">	
+			<form action="{{url_for('booking')}}" method="post">
+				<input type="text" name="userId" placeholder="User ID" required="">
+					
+				<div class="main-agileits">
+								<div class="sub-main">
+									<select id="cab" name="cab" onchange="change_country(this.value)" class="frm-field required sect">
+										<option value="4">Select Cab</option>
+										<option value="0">Mini Cab(4 Seater)</option>
+										<option value="1">Sedan Cab(5 Seater)</option>
+										<option value="2">SUV Cab(7 Seater)</option>
+									</select>
+								</div>
+							</div>
+				
+				<input type="text" name="startDate" placeholder="Start Date" required="">
+					
+				<input type="text" name="endDate" placeholder="End Date" required="">
+					
+				<input type="text" name="time" placeholder="Pick-up Time" required="">
+				
+				<div class="main-agileits">
+								<div class="sub-main">
+									<select id="cab" name="route" onchange="change_country(this.value)" class="frm-field required sect">
+										<option value="10">Select Cab Route</option>
+										<option value="0">Nashik-Pune(211 KM)</option>
+										<option value="1">Nashik-Mumbai(165 KM)</option>
+										<option value="2">Nashik-Nagpur(680 KM)</option>
+										<option value="3">Nashik-Dhule(144 KM)</option>
+										<option value="4">Nashik-Aurangabad(160 KM)</option>
+									</select>
+								</div>
+							</div>
+				<input type="text" name="pickupLocation" placeholder="Pick-up Location" required="">
+					
+				<input type="text" name="dropoffLocation" placeholder="Drop-off Location" required="">
+				<output type="text" name="dropoffLocation" placeholder="Drop-off Location" required="">
+				
+					
+				<input type="submit" value="BOOK NOW">
+			</form>
+		</div>
+		<div class="clear"></div>
+</div>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+</body>
+</html>

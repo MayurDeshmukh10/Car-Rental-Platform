@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Login</title>
+<link href="{{url_for('static',filename='css/bootstrap.min.css')}}" rel="stylesheet">
+<link href="{{url_for('static',filename='css/font-awesome.css')}}" rel="stylesheet"><!-- Font-awesome-CSS --> 
+<link href="{{url_for('static',filename='css/login.css')}}" rel='stylesheet' type='text/css'/><!-- style.css --> 
+<link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Basic Login Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+		<script>$(document).ready(function(c) {
+		$('.alert-close').on('click', function(c){
+			$('.main-agile').fadeOut('slow', function(c){
+				$('.main-agile').remove();
+			});
+		});	  
+	});
+	</script>
+</head>
+<body>
+	<h1>Car Rental Services</h1>
+	<div class="main-agile">
+		<!--<div class="bg-image"></div>-->
+		<div class="container" style="min-height:100% width:80%">
+		{% with messages = get_flashed_messages() %}
+		  {% if messages %}
+		    {% for message in messages %}
+			  <div class="alert alert-warning alert-dismissible" role="alert">
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+				{{message}}
+			  </div>
+			{% endfor %}
+		  {% endif %}
+		{% endwith %}
+		
+		{% block body %}{% endblock %}
+	</div>
+		<div class="alert-close"> </div>
+		<div class="content-wthree">
+		<div class="circle-w3layouts"></div>
+			<h2>Login</h2>
+			<form action="/echo" method="POST">
+								<div class="inputs-w3ls">
+									<i class="fa fa-user" aria-hidden="true"></i>
+									<input type="text" name="Username" placeholder="Username" required=""/>
+								</div>
+								<div class="inputs-w3ls">
+									<i class="fa fa-key" aria-hidden="true"></i>
+									<input type="password" name="Password" placeholder="Password" required=""/>
+								</div>
+									<input type="submit" value="LOGIN"> 
+									<div class="wthree-text"> 
+										<ul> 
+											<li> <a href="{{url_for('resetdriver')}}">Forgot password?</a> </li>
+										</ul>
+									</div> 
+									</br>
+									<div class="wthree-text"> 
+										<ul> 
+											<li> <a href="{{url_for('register')}}">New User? Signup !</a> </li>
+										</ul>
+									</div>
+								</form>
+		</div>
+	</div>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+
+	
+</body>
+</html>

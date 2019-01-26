@@ -1,0 +1,35 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Booking Not Available</title>
+<!-- Custom Theme files -->
+<link href="{{url_for('static',filename='css/allbooked.css')}}" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="keywords" content="Creative 404  Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<!--Google Fonts-->
+<link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!--Google Fonts-->
+</head>
+<body>
+<!--404 page start here-->
+<div class="not-found">
+	<div class="notfound-top">
+	    <h1>We Are All Booked !!!</h1>
+	</div>
+	<div class="content">
+		<img src="images/green.png" alt="" title="">
+		<h3>We are Sorry, Currently it Looks Like We are All Booked. Please Enter Your Username so We Can Contact You</h3>
+		<form action="{{url_for('booked')}}" method="post">
+		<input type="text" value="User Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User Name';}">
+		<input type="submit" value="Send"/>
+		</form>
+	</div>
+  <div class="clear"> </div>
+</div>
+<!--404 page end here-->
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Driver Availability Status</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Flat Sign Up Form Responsive Widget Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<link href="{{url_for('static',filename='bootstrap.min.css')}}" type="text/css" rel="stylesheet">
+	<link href="{{url_for('static',filename='reset.css')}}" type="text/css" rel="stylesheet">
+ </head>
+<body>
+<section class="bannerarea">
+<div class="container-fluid table-responsive">
+
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="{{url_for('homepage')}}">Car Rental Services </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+        <a class="nav-link" href="{{url_for('adminpage')}}">Home</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="{{url_for('carstatusdriver')}}">Display Status of Cars</a>
+      </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{url_for('changecarstatusdriver')}}">Change Status of Car</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{url_for('driverstatusdriver')}}">Display Status of Drivers</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="{{url_for('changedriverstatusdriver')}}">Change Status of Drivers</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+  <br>
+  <br>
+  <center><h2>Availability Status of All Drivers</h2></center>
+  <table align="center" class="table table-striped w-auto text-nowrap table-bordered table-hover ">
+
+    <!--Table head-->
+    <thead class="thead-dark">>
+        <tr>
+            <th>DriverID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Licence No.</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <!--Table head-->
+
+    <!--Table body-->
+    <tbody>
+    	{% for row in data %}
+		<tr class="table-info">
+		{% for d in row %}
+			<td>{{d}}</td>
+		{% endfor %}
+		</tr>
+	{% endfor %}
+        </tr>
+       
+    </tbody>
+    <!--Table body-->
+
+
+</table>
+
+</div>
+</section>
+<!--Table-->
+ 	<script src="{{url_for('static',filename='bootstrap.min.js')}}"></script>
+
+</body>
+</html>

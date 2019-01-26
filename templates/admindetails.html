@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Table V01</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Flat Sign Up Form Responsive Widget Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<link href="{{url_for('static',filename='bootstrap.min.css')}}" type="text/css" rel="stylesheet">
+	
+ </head>
+<body>
+
+<div class="container-fluid">
+	
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+  <a class="navbar-brand" href="#">Car Rental</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ">
+      <li class="nav-item">
+        <a class="nav-link" href="{{url_for('adminpage')}}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{url_for('addadmindriver')}}">Add New Admin <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{url_for('admindetails')}}">Display All Admins <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="{{url_for('deleteadmindriver')}}">Delete Admin<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+  <br>
+  <br>
+  <center><h2>Admin Users List</h2></center>
+
+  <table class="table table-striped w-auto text-nowrap table-bordered ">
+
+    <!--Table head-->
+    <thead class="thead-dark">>
+        <tr>
+            <th>Username</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email Id</th>
+             <th>Phone Number</th>
+              <th>Registration</th>
+             <th>Password</th>
+            <th>Security Question</th>
+            <th>Answer</th>
+        </tr>
+    </thead>
+    <!--Table head-->
+
+    <!--Table body-->
+    <tbody>
+    	{% for row in data %}
+		<tr class="table-info">
+		{% for d in row %}
+			<td>{{d}}</td>
+		{% endfor %}
+		</tr>
+	{% endfor %}
+        </tr>
+       
+    </tbody>
+    <!--Table body-->
+
+
+</table>
+</div>
+<!--Table-->
+ 	<script src="{{url_for('static',filename='bootstrap.min.js')}}"></script>
+
+</body>
+</html>

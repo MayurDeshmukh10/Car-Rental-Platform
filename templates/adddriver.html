@@ -1,0 +1,76 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Add Driver</title>
+<!--<link href="{{url_for('static',filename='css/style.css')}}" rel="stylesheet" type="text/css" media="all"/>-->
+<link href="{{url_for('static',filename='css/bootstrap.min.css')}}" rel="stylesheet">
+<link href="{{url_for('static',filename='css/reset.css')}}" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="keywords" content="Reset Password Form Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<!--google fonts-->
+<link href='//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<!--element start here-->
+<div class="container" style="min-height:100% width:80%">
+		{% with messages = get_flashed_messages() %}
+		  {% if messages %}
+		    {% for message in messages %}
+			  <div class="alert alert-warning alert-dismissible" role="alert">
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+				{{message}}
+			  </div>
+			{% endfor %}
+		  {% endif %}
+		{% endwith %}
+		
+		{% block body %}{% endblock %}
+	</div>
+<div class="elelment">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Manage Driver </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+        <a class="nav-link" href="{{url_for('adminpage')}}">Home</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{url_for('adddriver')}}">Add New Driver <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{url_for('displaydriver')}}">Display All Drivers</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{url_for('delete_driver')}}">Remove Driver</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+	<!--<h2>Reset Password Form</h2>-->
+	<div class="element-main">
+		<h1>Add New Driver?</h1>
+		<p> Please Fill Following Details of New Driver</p>
+		<form action="{{url_for('adddriverform')}}" method="post">
+			<input type="text" name = "dfname" placeholder="Enter Driver First Name" required="">
+			<input type="text" name = "dlname" placeholder="Enter Driver's Last Name" required="">
+			<input type="text" name = "dphone" placeholder="Enter Driver's Phone No." required="">
+			<input type="text" name = "dage" placeholder="Enter Driver's Age" required="">
+			<input type="text" name = "license" placeholder="Enter Driver's License No." required="">
+			<input type="submit" value="ADD New Driver">
+		</form>
+	</div>
+</div>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+
+
+<!--element end here-->
+</body>
+</html>
